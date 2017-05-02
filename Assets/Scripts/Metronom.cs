@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class Metronom : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    public static int step;
+    public int maxStep;
+    
+    bool nextStep = true;
+    // Use this for initialization
+    void Start () {
+        
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+        if (nextStep) {
+            Invoke("StepCounter", 1); //maybe a better way?
+            nextStep = false;
+        }
+        
 	}
+    void StepCounter()
+    {
+        if(step < maxStep - 1){
+            step++;
+        }
+        else{
+            step = 0;
+        }
+        nextStep = true;
+        Debug.Log(step);
+    }
 }

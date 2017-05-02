@@ -87,6 +87,7 @@
     <Compile Include="Assets\Metronome.cs" />
     <Compile Include="Assets\Scripts\AudioPeer.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\InstantiateMetronomCubes.cs" />
     <Compile Include="Assets\Scripts\Metronom.cs" />
     <Compile Include="Assets\Scripts\ParamCube.cs" />
     <Compile Include="Assets\Scripts\SoundBoard.cs" />
@@ -96,7 +97,7 @@
     <Compile Include="Assets\Scripts\TrackSaver.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Sounds\Piano\_readme_and_license.txt" />
+    <None Include="Assets\Sounds\Sound Piano\_readme_and_license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
