@@ -52,6 +52,28 @@ public class SoundManager : MonoBehaviour {
         {
             PlaySounds(1);
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            PlaySounds(2);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            PlaySounds(3);
+
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlaySounds(4);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            PlaySounds(5);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            PlaySounds(6);
+        }
+
     }
 
     void OtherKeys()
