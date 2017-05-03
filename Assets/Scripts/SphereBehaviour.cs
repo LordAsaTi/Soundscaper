@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SphereBehaviour : MonoBehaviour {
 
-    int band = 1;
+    public int band = 0;
     private static float startScale = 1;
-    private static float maxScale = 8;
+    private static float maxScale = 5;
 
     private AudioSource currSound;
     private float dataMultiplier = 1000;
@@ -18,7 +18,7 @@ public class SphereBehaviour : MonoBehaviour {
 
     float[] freqBandHighest = new float[8];
     public static float[] audioBand = new float[8];
-    public static float[] audioBandBuffer = new float[8];
+    public  float[] audioBandBuffer = new float[8];
 
     // Use this for initialization
     void Start () {
