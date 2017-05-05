@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SphereBehaviour : MonoBehaviour {
 
+    //Spawnt nur in einem Kreuzbereich, ändern?
+
     public int band = 0;
     private static float startScale = 1;
     private static float maxScale = 5;
@@ -41,6 +43,9 @@ public class SphereBehaviour : MonoBehaviour {
 
             transform.localScale = new Vector3((audioBandBuffer[band] * maxScale) + startScale, (audioBandBuffer[band] * maxScale) + startScale, (audioBandBuffer[band] * maxScale) + startScale);
 
+        }
+        else {
+            transform.localScale = Vector3.zero;
         }
 
     }

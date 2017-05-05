@@ -12,10 +12,12 @@ public class SoundManager : MonoBehaviour {
     private int currentSoundboardIndex;
     public SoundBoard currentSoundboard;
 
-    public
+    public Metronom metronom;
 
     // Use this for initialization
-    void Start() {}
+    void Start() {
+        metronom = FindObjectOfType<Metronom>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -73,7 +75,6 @@ public class SoundManager : MonoBehaviour {
         {
             PlaySounds(6);
         }
-
     }
 
     void OtherKeys()
@@ -81,14 +82,22 @@ public class SoundManager : MonoBehaviour {
         //Record
         if(Input.GetKeyDown(KeyCode.R))
         {
+            Debug.Log("Record");
             temp = Instantiate(trackSaver);
+        }
+        //Pause
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            metronom.run = !metronom.run;
         }
     }
     void PlaySounds(int tracknumber)
     {
         currentSoundboard.playSound(tracknumber);
-        currentTrackSaver = temp.GetComponent<TrackSaver>();
-        currentTrackSaver.SetTrack(currentSoundboard.currentSound);
+        if (temp != null) {
+            currentTrackSaver = temp.GetComponent<TrackSaver>();
+            currentTrackSaver.SetTrack(currentSoundboard.currentSound);
+        }
     }
 
 }

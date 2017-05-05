@@ -22,29 +22,25 @@ public class SoundBoard : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update () {}
 
     public void playSound(int soundToBePlayed)
     {
         temp = Instantiate(sounds[soundToBePlayed], genRandom(), Quaternion.identity, sphereHolder.transform);
         //sounds[soundToBePlayed].Play();
         temp.Play();
+        currentSound = temp;
     }
 
     Vector3 genRandom()
-    {
-        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(RandomCoordinate(), Random.Range(-5, Screen.height), RandomCoordinate()));
-        return screenPosition;
-    }
-    float RandomCoordinate()
     {
         float randomCoordinate = Random.Range(-10, 10);
         while (randomCoordinate < 3f && randomCoordinate > -3f)
         {
             randomCoordinate = Random.Range(-10, 10);
         }
-        return randomCoordinate;
+        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(10, 20)));
+
+        return screenPosition;
     }
 }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Metronom : MonoBehaviour {
 
+    
+
     public static int step;
     public int maxStep;
+    public bool run = true;
     
     bool nextStep = true;
     // Use this for initialization
@@ -15,12 +18,15 @@ public class Metronom : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (nextStep) {
-            Invoke("StepCounter", 1); //maybe a better way?
-            nextStep = false;
+        if (run) {
+            if (nextStep) {
+                Invoke("StepCounter", 1); //maybe a better way?
+                nextStep = false;
+            }
         }
         
 	}
+
     void StepCounter()
     {
         if(step < maxStep - 1){
