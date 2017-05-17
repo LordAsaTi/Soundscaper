@@ -23,6 +23,9 @@ public class ExplosionBehaviour : MonoBehaviour {
     public static float[] audioBand = new float[8];
     public float[] audioBandBuffer = new float[8];
 
+    public ParticleSystem effect;
+    private bool effectPlayed;
+
     // Use this for initialization
     void Start () {
         currSound = GetComponent<AudioSource>();
@@ -32,7 +35,11 @@ public class ExplosionBehaviour : MonoBehaviour {
 	void Update () {
         if (currSound.isPlaying)
         {
-
+            if (!effectPlayed)
+            {
+                effect.Play();
+                effectPlayed = true;
+            }
             //currSound.GetOutputData(spectrum, 0);
 
             currSound.GetSpectrumData(spectrum, 0, FFTWindow.Blackman);
@@ -42,9 +49,11 @@ public class ExplosionBehaviour : MonoBehaviour {
             createAudioBands();
 
             //transform.localScale = new Vector3((audioBandBuffer[band] * maxScale) + startScale, (audioBandBuffer[band] * maxScale) + startScale, (audioBandBuffer[band] * maxScale) + startScale);
-
+            
         }
         else {
+            effect.Stop();
+            effectPlayed = false;
             transform.localScale = Vector3.zero;
         }
     }
