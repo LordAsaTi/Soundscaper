@@ -7,11 +7,11 @@ public class ExplosionBehaviour : MonoBehaviour {
 
     //Spawnt nur in einem Kreuzbereich, ändern?
 
+    /*
     public int band = 0;
     private static float startScale = 1;
     private static float maxScale = 5;
 
-    private AudioSource currSound;
     private float dataMultiplier = 1000;
     public static float[] buffer = new float[8];
     private float[] bufferDecrease = new float[8];
@@ -22,6 +22,8 @@ public class ExplosionBehaviour : MonoBehaviour {
     float[] freqBandHighest = new float[8];
     public static float[] audioBand = new float[8];
     public float[] audioBandBuffer = new float[8];
+    */
+    private AudioSource currSound;
 
     public ParticleSystem effect;
     private bool effectPlayed;
@@ -42,11 +44,13 @@ public class ExplosionBehaviour : MonoBehaviour {
             }
             //currSound.GetOutputData(spectrum, 0);
 
+            /*
             currSound.GetSpectrumData(spectrum, 0, FFTWindow.Blackman);
             MakeFrequencyBands();
 
             useBuffer();
             createAudioBands();
+            */
 
             //transform.localScale = new Vector3((audioBandBuffer[band] * maxScale) + startScale, (audioBandBuffer[band] * maxScale) + startScale, (audioBandBuffer[band] * maxScale) + startScale);
             
@@ -58,6 +62,7 @@ public class ExplosionBehaviour : MonoBehaviour {
         }
     }
 
+    /*
     void useBuffer()
     {
         for (int g = 0; g < 8; g++)
@@ -108,4 +113,5 @@ public class ExplosionBehaviour : MonoBehaviour {
             audioBandBuffer[i] = (buffer[i] / freqBandHighest[i]);
         }
     }
+    */
 }

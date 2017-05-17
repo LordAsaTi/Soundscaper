@@ -14,11 +14,12 @@ public class SoundBoard : MonoBehaviour {
 
     public AudioSource currentSound;
 
-    private GameObject sphereHolder;
+    public GameObject sphereHolder;
+    public GameObject explosionHolder;
 
 	// Use this for initialization
 	void Start () {
-        sphereHolder = GameObject.Find("SphereHolder");
+        //sphereHolder = GameObject.Find("SphereHolder");
 	}
 	
 	// Update is called once per frame
