@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioPeer.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\ExplosionBehaviour.cs" />
     <Compile Include="Assets\Scripts\InstantiateMetronomCubes.cs" />
     <Compile Include="Assets\Scripts\Metronom.cs" />
     <Compile Include="Assets\Scripts\MetronomText.cs" />
