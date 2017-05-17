@@ -27,13 +27,20 @@ public class SoundBoard : MonoBehaviour {
 
     public void playSound(int soundToBePlayed)
     {
-        temp = Instantiate(sounds[soundToBePlayed], genRandom(), Quaternion.identity, sphereHolder.transform);
+        if (sphereHolder != null) {
+            temp = Instantiate(sounds[soundToBePlayed], genRandomSphere(), Quaternion.identity, sphereHolder.transform);
+        }
+        else if (explosionHolder != null)
+        {
+            temp = Instantiate(sounds[soundToBePlayed], genRandomExplosion(), Quaternion.identity, explosionHolder.transform);
+        }
+
         //sounds[soundToBePlayed].Play();
         temp.Play();
         currentSound = temp;
     }
 
-    Vector3 genRandom()
+    Vector3 genRandomSphere()
     {
         float randomCoordinate = Random.Range(-10, 10);
         while (randomCoordinate < 3f && randomCoordinate > -3f)
@@ -41,6 +48,15 @@ public class SoundBoard : MonoBehaviour {
             randomCoordinate = Random.Range(-10, 10);
         }
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(10, 20)));
+
+        return screenPosition;
+    }
+
+    Vector3 genRandomExplosion()
+    {
+        float randomCoordinate = Random.Range(-10, 10);
+
+        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(250, 500)));
 
         return screenPosition;
     }
