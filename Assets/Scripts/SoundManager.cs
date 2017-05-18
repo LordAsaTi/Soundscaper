@@ -45,12 +45,12 @@ public class SoundManager : MonoBehaviour {
 
     void KeyInputs()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || ArduinoInput.input.Contains("a"))
         {
             PlaySounds(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) || ArduinoInput.input.Contains("b"))
         {
             PlaySounds(1);
         }
