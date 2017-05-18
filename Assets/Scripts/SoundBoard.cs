@@ -14,11 +14,12 @@ public class SoundBoard : MonoBehaviour {
 
     public AudioSource currentSound;
 
-    private GameObject sphereHolder;
+    public GameObject sphereHolder;
+    public GameObject explosionHolder;
 
 	// Use this for initialization
 	void Start () {
-        sphereHolder = GameObject.Find("SphereHolder");
+        //sphereHolder = GameObject.Find("SphereHolder");
 	}
 	
 	// Update is called once per frame
@@ -26,8 +27,13 @@ public class SoundBoard : MonoBehaviour {
 
     public void playSound(int soundToBePlayed)
     {
-        temp = Instantiate(sounds[soundToBePlayed], genRandom(), Quaternion.identity, sphereHolder.transform);
-        //sounds[soundToBePlayed].Play();
+        if (sphereHolder != null) {
+            temp = Instantiate(sounds[soundToBePlayed], genRandom(), Quaternion.identity, sphereHolder.transform);
+        }
+        else if (explosionHolder != null)
+        {
+            temp = Instantiate(sounds[soundToBePlayed], genRandomExplosion(), Quaternion.identity, explosionHolder.transform);
+        }
         temp.Play();
         currentSound = temp;
     }
@@ -40,6 +46,15 @@ public class SoundBoard : MonoBehaviour {
             randomCoordinate = Random.Range(-10, 10);
         }
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(10, 20)));
+
+        return screenPosition;
+    }
+
+    Vector3 genRandomExplosion()
+    {
+        float randomCoordinate = Random.Range(-10, 10);
+
+        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(250, 500)));
 
         return screenPosition;
     }
