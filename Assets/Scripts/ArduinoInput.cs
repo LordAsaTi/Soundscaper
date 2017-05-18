@@ -11,9 +11,15 @@ public class ArduinoInput : MonoBehaviour {
     SerialPort sp = new SerialPort("COM4", 9600);
     // Use this for initialization
     void Start () {
-		sp.Open ();
-		sp.ReadTimeout = 1;
-        input = "0";
+        try {
+            sp.Open();
+            sp.ReadTimeout = 1;
+            input = "0";
+        }
+        catch
+        {
+            Debug.Log("No Arduino avaible");
+        }
         
 	}
 	

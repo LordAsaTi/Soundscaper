@@ -26,6 +26,8 @@ public class SoundManager : MonoBehaviour {
         OtherKeys();
 
         KeyInputs();
+
+        try { ArduinoInputs(); } catch { }
 	}
 
     void SwitchBoard()
@@ -45,15 +47,17 @@ public class SoundManager : MonoBehaviour {
 
     void KeyInputs()
     {
-        if (Input.GetKeyDown(KeyCode.A) || ArduinoInput.input.Contains("a"))
+
+        if (Input.GetKeyDown(KeyCode.A))
         {
             PlaySounds(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.B) || ArduinoInput.input.Contains("b"))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             PlaySounds(1);
         }
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             PlaySounds(2);
@@ -61,7 +65,6 @@ public class SoundManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.D))
         {
             PlaySounds(3);
-
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -74,6 +77,19 @@ public class SoundManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.G))
         {
             PlaySounds(6);
+        }
+    }
+
+    void ArduinoInputs()
+    {
+        if (ArduinoInput.input.Contains("a"))
+        {
+            PlaySounds(0);
+        }
+
+        if (ArduinoInput.input.Contains("b"))
+        {
+            PlaySounds(1);
         }
     }
 
