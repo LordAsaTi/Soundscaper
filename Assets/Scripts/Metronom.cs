@@ -30,7 +30,7 @@ public class Metronom : MonoBehaviour {
 	void FixedUpdate () {
         if (run) {
             if (nextStep) {
-                Invoke("StepCounter", 1); //maybe a better way?
+                Invoke("StepCounter", 0.5f); //maybe a better way?
                 nextStep = false;
             }
         }

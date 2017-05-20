@@ -9,8 +9,8 @@ public class TrackSaver : MonoBehaviour {
     public bool recording = true;
 
     //Achter takt
-    public AudioSource[] saved = new AudioSource[8];
-    public int lastSoundPlayed = 10;
+    public AudioSource[] saved = new AudioSource[16];
+    public int lastSoundPlayed = 99;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +34,7 @@ public class TrackSaver : MonoBehaviour {
             }
             else
             {
-                if (Metronom.step == 7)
+                if (Metronom.step == 14)
                 {
                     Invoke("Stop", 1);
                 }
