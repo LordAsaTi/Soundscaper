@@ -40,22 +40,24 @@ public class SoundBoard : MonoBehaviour {
 
     Vector3 genRandom()
     {
+        /*
         float randomCoordinate = Random.Range(-10, 10);
         while (randomCoordinate < 3f && randomCoordinate > -3f)
         {
             randomCoordinate = Random.Range(-10, 10);
         }
-        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(10, 20)));
-
+        //Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(10, 20)));
+        */
+        Vector3 screenPosition = new Vector3(Random.Range(-9,9), Random.Range(-4.5f, 4.5f), 10);
         return screenPosition;
     }
 
     Vector3 genRandomExplosion()
     {
-        float randomCoordinate = Random.Range(-10, 10);
+        //float randomCoordinate = Random.Range(-10, 10);
 
-        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(250, 500)));
-
+        //Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(randomCoordinate, Random.Range(-5, Screen.height), Random.Range(250, 500)));
+        Vector3 screenPosition = new Vector3(Random.Range(-300, 300), Random.Range(-150, 150f), 300);
         return screenPosition;
     }
 }

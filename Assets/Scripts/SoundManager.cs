@@ -91,6 +91,38 @@ public class SoundManager : MonoBehaviour {
         {
             PlaySounds(1);
         }
+        if (ArduinoInput.input.Contains("c"))
+        {
+            PlaySounds(2);
+        }
+        if (ArduinoInput.input.Contains("d"))
+        {
+            PlaySounds(3);
+        }
+        if (ArduinoInput.input.Contains("e"))
+        {
+            PlaySounds(4);
+        }
+        if (ArduinoInput.input.Contains("f"))
+        {
+            PlaySounds(5);
+        }
+        if (ArduinoInput.input.Contains("g"))
+        {
+            PlaySounds(6);
+        }
+        if (ArduinoInput.input.Contains("r"))
+        {
+            temp = Instantiate(trackSaver);
+        }
+        if (ArduinoInput.input.Contains("s"))
+        {
+            metronom.run = !metronom.run;
+        }
+
+
+
+
     }
 
     void OtherKeys()
