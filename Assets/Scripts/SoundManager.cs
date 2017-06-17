@@ -14,9 +14,12 @@ public class SoundManager : MonoBehaviour {
 
     public Metronom metronom;
 
+    public ShowHand showHand;
+
     // Use this for initialization
     void Start() {
         metronom = FindObjectOfType<Metronom>();
+        showHand = FindObjectOfType<ShowHand>();
     }
 	
 	// Update is called once per frame
@@ -42,6 +45,7 @@ public class SoundManager : MonoBehaviour {
             }
 
             currentSoundboard = soundBoard[currentSoundboardIndex];
+            showHand.SendMessage("SettingText", currentSoundboardIndex);
         }
     }
 
@@ -146,6 +150,10 @@ public class SoundManager : MonoBehaviour {
             currentTrackSaver = temp.GetComponent<TrackSaver>();
             currentTrackSaver.SetTrack(currentSoundboard.currentSound);
         }
+    }
+    public int getSoundboardIndex()
+    {
+        return currentSoundboardIndex;
     }
 
 }

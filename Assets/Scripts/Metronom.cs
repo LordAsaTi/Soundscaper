@@ -16,14 +16,14 @@ public class Metronom : MonoBehaviour {
     bool nextStep = true;
     // Use this for initialization
     void Start () {
-        line = GameObject.Find("Line");
+       /* line = GameObject.Find("Line");
         checkPoints[0] = GameObject.Find("StartPoint").transform;
         for (int i = 1; i < 8; i++)
         {
             checkPoints[i] = GameObject.Find("Point"+i).transform;
         }
         checkPoints[8] = GameObject.Find("Endpoint").transform;
-
+        */
 	}
 	
 	// Update is called once per frame

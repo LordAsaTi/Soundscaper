@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\MetronomText.cs" />
     <Compile Include="Assets\Scripts\MetronomVisualLine.cs" />
     <Compile Include="Assets\Scripts\ParamCube.cs" />
+    <Compile Include="Assets\Scripts\ShowHand.cs" />
     <Compile Include="Assets\Scripts\SoundBoard.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\SphereBehaviour.cs" />
